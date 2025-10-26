@@ -23,6 +23,6 @@ The goal of this project is to present my development skills, UI/UX creativity, 
 
 ## 📬 Contact
 If you’d like to connect or collaborate, feel free to reach out:  
-**Email:** [your-email@example.com]  
-**GitHub:** [github.com/yourusername]  
-**LinkedIn:** [linkedin.com/in/yourprofile]
+**Email:** [asadisse12@gmail.com]  
+**GitHub:** [github.com/Mr-Isse]  
+**LinkedIn:** [linkedin.com/in/mohamed-ciise-8b417a37a/]
