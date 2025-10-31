@@ -1,35 +1,30 @@
-import { Bars3Icon, MoonIcon, SunIcon } from '@heroicons/react/16/solid';
+import { MoonIcon, SunIcon } from 'lucide-react';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import {useTheme} from 'next-themes'
+import { FaBars } from 'react-icons/fa';
+import { useTheme } from 'next-themes'
 const Header = () => {
-    const [Open,SetOpen]=useState(false);
-    const {theme,setTheme}= useTheme();
+  const [Open,SetOpen] = useState(false);
+  const { theme, setTheme } = useTheme()
   return (
-    <div className='flex justify-between items-center mx-26'>
-      <div>
-        <h1 className='text-4xl font-medium'>Eng-<span className='text-blue-400'>Asad</span></h1>
+    <div className='flex justify-between items-center mt-6'>
+        <h1 className='text-2xl'>Eng<span className='text-3xl text-blue-400'>Asad</span></h1>
+      <div className='flex md:hidden'>
+        <FaBars className='size-7 my-2 cursor-pointer' onClick={()=>SetOpen(!Open)}/>
       </div>
-      <div>
-        <Bars3Icon className='w-7 cursor-pointer mx-8 md:hidden' onClick={()=>SetOpen(!Open)}/>
-      </div>
-      <div className='items-center space-x-10 hidden md:flex'>
-        <Link to='/' className='text-2xl font-medium'>Home</Link>
-        <Link to='/projects' className='text-2xl font-medium'>Projects</Link>
-        <Link to='/about' className='text-2xl font-medium'>About</Link>
-        <Link to='/contact' className='text-2xl font-medium'>Contact</Link>
-        {theme==="dark" ? (<MoonIcon className='w-7 cursor-pointer' onClick={()=> setTheme("light")}/>):
-        <SunIcon className='w-8 cursor-pointer' onClick={()=>setTheme("dark")}/>
-        }
-        
-      </div>
-      <div className={`items-center space-y-18 flex flex-col md:hidden top-24 h-screen absolute w-screen shadow-2xl bg-gray-100 ${Open? "flex" : "hidden"}`}>
-        <Link to='/' className='text-2xl font-medium'>Home</Link>
-        <Link to='/projects' className='text-2xl font-medium'>Projects</Link>
-        <Link to='/about' className='text-2xl font-medium'>About</Link>
-        <Link to='/contact' className='text-2xl font-medium'>Contact</Link>
-        <SunIcon className='w-8'/>
-      </div>
+      <div className='hidden space-x-10 mx-4 items-center md:flex '>
+        <a href="" className='text-2xl'>Home</a>
+        <a href="" className='text-2xl'>Projects</a>
+        <a href="" className='text-2xl '>About</a>
+        <a href="" className='text-2xl'>Contact</a>
+        {theme==="dark"? <MoonIcon className='size-9 cursor-pointer' onClick={()=> setTheme("light")}/>: <SunIcon className='size-9 cursor-pointer' onClick={()=> setTheme("dark")}/>}
+       </div>
+       <div className={`flex flex-col space-y-24 items-center md:hidden absolute top-22 bg-white  mt-38 bg- shadow-lg h-screen w-screen ${Open? "flex": "hidden"} `}>
+        <a href="" className='text-2xl'>Home</a>
+        <a href="" className='text-2xl'>Projects</a>
+        <a href="" className='text-2xl '>About</a>
+        <a href="" className='text-2xl'>Contact</a>
+        <MoonIcon className='cursor-pointer mx-3'/>
+       </div>
     </div>
   );
 }
